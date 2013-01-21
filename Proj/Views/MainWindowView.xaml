@@ -1,0 +1,321 @@
+﻿<Window x:Class="Proj.Views.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:data="clr-namespace:Proj.Model"
+        Title="{Binding AppTitle}" Height="500" Width="1000"
+        Loaded="Window_Loaded">
+    <Window.Resources>
+        
+            <Style TargetType="{x:Type Image}">
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="false">
+                        <Setter Property="Opacity" Value=".3" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+ 
+    </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding NewFileCommand}"
+                    Gesture="CTRL+N" />
+        <KeyBinding Command="{Binding OpenFileCommand}"
+                    Gesture="CTRL+O" />
+        <KeyBinding Command="{Binding SaveFileCommand}"
+                    Gesture="CTRL+S" />
+
+        <KeyBinding Command="{Binding AboutWindowCommand}"
+                    Gesture="F1" />
+
+        <KeyBinding Command="{Binding ListWindowCommand}"
+                    CommandParameter="shoppingList"
+                    Gesture="F4" />
+        <KeyBinding Command="{Binding ListWindowCommand}"
+                    CommandParameter="sellList"
+                    Gesture="F5" />
+
+        <KeyBinding Command="{Binding AddLineCommand}"
+                    Gesture="Insert" />
+        <KeyBinding Command="{Binding RemoveLineCommand}"
+                    Gesture="Shift+Delete" />
+    </Window.InputBindings>
+
+    <DockPanel LastChildFill="False">
+        
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Plik">
+                <MenuItem Header="_Nowy plik" 
+                          Command="{Binding NewFileCommand}" 
+                          InputGestureText="Ctrl+N" />
+                <MenuItem Header="_Otworz plik..." 
+                          Command="{Binding OpenFileCommand}"
+                          InputGestureText="Ctrl+O" />
+                <MenuItem Header="_Zapisz plik..." 
+                          Command="{Binding SaveFileCommand}" 
+                          InputGestureText="Ctrl+S" />
+                <MenuItem Header="_Zapisz plik jako..." 
+                          Command="{Binding SaveAsFileCommand}" />
+                <MenuItem Header="_Wyjscie" 
+                          Command="{Binding CloseAppCommand}"
+                          InputGestureText="Atl+F4" />
+            </MenuItem>
+            <MenuItem Header="_Operacje">
+                <MenuItem Header="_Dodaj linię"
+                          Command="{Binding AddLineCommand}" 
+                          InputGestureText="Insert" />
+                <MenuItem Header="_Usuń linię" 
+                          Command="{Binding RemoveLineCommand}"
+                          InputGestureText="Delete" />
+                <MenuItem Header="_Sortuj">
+                    <MenuItem Header="Według nazwy rosnąco" 
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="Nazwa Ascending" />
+                    <MenuItem Header="Według nazwy malejąco" 
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="Nazwa Descending" />
+                    <Separator />
+                    <MenuItem Header="Według ceny zakupu rosnąco"
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="CenaZakupu Ascending" />
+                    <MenuItem Header="Według ceny zakupu malejąco" 
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="CenaZakupu Descending" />
+                    <Separator />
+                    <MenuItem Header="Według ceny sprzedaży rosnąco"
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="CenaSprzedazy Ascending"/>
+                    <MenuItem Header="Według ceny sprzedaży malejąco"
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="CenaSprzedazy Descending" />
+                    <Separator />
+                    <MenuItem Header="Według kategorii rosnąco" 
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="Kategoria Ascending" />
+                    <MenuItem Header="Według kategorii malejąco" 
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="Kategoria Descending" />
+                    <Separator />
+                    <MenuItem Header="Według ilości rosnąco" 
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="Ilosc Ascending" />
+                    <MenuItem Header="Według ilości malejąco" 
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="Ilosc Descending" />
+                    <Separator />
+                    <MenuItem Header="Według zaznaczenia Kupować?" 
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="CzyKupowac Descending" />
+                    <MenuItem Header="Odwrotnie do zaznaczenia Kupować?" 
+                              Command="{Binding SortListCommand}"
+                              CommandParameter="CzyKupowac Ascending" />
+                </MenuItem>
+                <MenuItem Header="_Generuj listę zakupów..."
+                          Command="{Binding ListWindowCommand}"
+                          CommandParameter="shoppingList" 
+                          InputGestureText="F4" />
+                <MenuItem Header="_Generuj listę sprzedaży..." 
+                          Command="{Binding ListWindowCommand}"
+                          CommandParameter="sellList" 
+                          InputGestureText="F5" />
+            </MenuItem>
+            <MenuItem Header="P_omoc">
+                <MenuItem Header="_Informacje..." 
+                          Command="{Binding AboutWindowCommand}" 
+                          InputGestureText="F1" />
+            </MenuItem>
+        </Menu>
+        
+        <ToolBar DockPanel.Dock="Top">
+            <Button Width="48" Height="48"
+                    Command="{Binding NewFileCommand}"
+                    ToolTip="Nowy plik">
+                <Image Source="..\Resources\icons\new.png"
+                       Width="32" Height="32" />
+            </Button>
+            <Button Width="48" Height="48"
+                    Command="{Binding OpenFileCommand}"
+                    ToolTip="Otwórz plik">
+                <Image Source="..\Resources\icons\open.png"
+                       Width="32" Height="32" />
+            </Button>
+            <Button Width="48" Height="48"
+                    Command="{Binding SaveFileCommand}"
+                    ToolTip="Zapisz plik">
+                <Image Source="..\Resources\icons\save.png"
+                       Width="32" Height="32" />
+            </Button>
+            
+            <Separator />
+            
+            <Button Width="48" Height="48"
+                    Command="{Binding AddLineCommand}"
+                    ToolTip="Dodaj linię">
+                <Image Source="..\Resources\icons\add.png"
+                       Width="32" Height="32" />
+            </Button>
+            <Button Width="48" Height="48"
+                    Command="{Binding RemoveLineCommand}"
+                    ToolTip="Usuń linię">
+                <Image Source="..\Resources\icons\delete.png"
+                       Width="32" Height="32" />
+            </Button>
+            <Button Width="48" Height="48"
+                    Command="{Binding MoveCommand}"
+                    CommandParameter="Up"
+                    ToolTip="Przenieś w górę">
+                <Image Source="..\Resources\icons\up.png"
+                       Width="32" Height="32" />
+            </Button>
+            <Button Width="48" Height="48"
+                    Command="{Binding MoveCommand}"
+                    CommandParameter="Down"
+                    ToolTip="Przenieś w dół">
+                <Image Source="..\Resources\icons\down.png"
+                       Width="32" Height="32" />
+            </Button>
+
+            <Separator />
+            
+            <Button Width="48" Height="48"
+                    Command="{Binding ListWindowCommand}"
+                    CommandParameter="shoppingList"
+                    ToolTip="Generuj listę zakupów">
+                <Image Source="..\Resources\icons\cart.png"
+                       Width="32" Height="32" />
+            </Button>
+            <Button Width="48" Height="48"
+                    Command="{Binding ListWindowCommand}"
+                    CommandParameter="sellList"
+                    ToolTip="Generuj listę sprzedaży">
+
+                <Image Source="..\Resources\icons\coins.png"
+                       Width="32" Height="32" />
+            </Button>
+        </ToolBar>
+
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Text="{Binding ProductList.ProductsCount, StringFormat='Ilość wszystkich produktów: {0}'}" />
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem>
+                <TextBlock Text="{Binding ProductList.ProductsToBuyCount, StringFormat='Ilość produktów do kupienia: {0}'}" />
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem>
+                <TextBlock Text="{Binding ProductList.ProductsPurchaseCost, StringFormat='Koszt zakupu produktów: {0} zł'}" />
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem>
+                <TextBlock Text="{Binding ProductList.ProductsSaleEarn, StringFormat='Przychód ze sprzedaży produktów: {0} zł'}" />
+            </StatusBarItem>
+        </StatusBar>
+
+        <DataGrid x:Name="Data" DockPanel.Dock="Top"
+                  Grid.Row="0"
+                      AutoGenerateColumns="False"
+                      GridLinesVisibility="None"
+                      HeadersVisibility="Column"
+                      SelectionMode="Single"
+                      BorderThickness="0,0,0,0"
+                      RowHeight="30"
+                      HorizontalContentAlignment="Center"
+                      CanUserResizeColumns="False"
+                      CanUserResizeRows="False"
+                      CanUserSortColumns="False"
+                      CanUserDeleteRows="False"
+                      FontSize="14"
+                      CanUserAddRows="False"
+                      ItemsSource="{Binding ProductList, Mode=TwoWay}"
+                      SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
+                      SelectedIndex="{Binding SelectedProductIndex, Mode=TwoWay}">
+                      
+            <DataGrid.Resources>
+                
+                <ObjectDataProvider x:Key="JednostkaSprzedazyLista" MethodName="GetValues" ObjectType="{x:Type data:JednostkiSprzedazy}">
+                    <ObjectDataProvider.MethodParameters>
+                        <x:Type TypeName="data:JednostkiSprzedazy"/>
+                    </ObjectDataProvider.MethodParameters>
+                </ObjectDataProvider>
+
+                <ObjectDataProvider x:Key="KategoriaLista" MethodName="GetValues" ObjectType="{x:Type data:Kategorie}">
+                    <ObjectDataProvider.MethodParameters>
+                        <x:Type TypeName="data:Kategorie"/>
+                    </ObjectDataProvider.MethodParameters>
+                </ObjectDataProvider>
+                
+                <Style x:Key="datagridElementStyle" TargetType="{x:Type TextBlock}">
+                    <Style.Triggers>
+                        <Trigger Property="Validation.HasError" Value="True">
+                            <Setter Property="Background" Value="Yellow" />
+                            <Setter Property="Foreground" Value="Red" />
+                            <Setter Property="ToolTip" 
+                                    Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                        </Trigger>
+
+                    </Style.Triggers>
+                </Style>
+            
+            </DataGrid.Resources>
+
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Dodaj linię..." 
+                              Command="{Binding AddLineCommand}" />
+                    <MenuItem Header="Usuń linię..." 
+                              Command="{Binding RemoveLineCommand}" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Nr, UpdateSourceTrigger=LostFocus}" 
+                                        MinWidth="50" />
+
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Nazwa, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
+                                        MinWidth="100" Width="*" ElementStyle="{StaticResource datagridElementStyle}" />
+
+                <DataGridTextColumn Header="Cena zakupu" MinWidth="100" 
+                                    Binding="{Binding CenaZakupu, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
+                                    ElementStyle="{StaticResource datagridElementStyle}" />
+
+                <DataGridTextColumn Header="Cena sprzedaży" MinWidth="100" 
+                                    Binding="{Binding CenaSprzedazy, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
+                                    ElementStyle="{StaticResource datagridElementStyle}" />
+
+                <DataGridComboBoxColumn Header="Jednostka" SelectedValueBinding="{Binding JednostkaSprzedazy, UpdateSourceTrigger=PropertyChanged}" 
+                                            ItemsSource="{Binding Source={StaticResource JednostkaSprzedazyLista}}" 
+                                            MinWidth="50" />
+
+                <DataGridTextColumn Header="Min. ilość" Binding="{Binding MinIloscSprzedazy, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
+                                        MinWidth="50" ElementStyle="{StaticResource datagridElementStyle}" />
+
+                <DataGridTextColumn Header="Max. ilość" Binding="{Binding MaxIloscSprzedazy, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
+                                        MinWidth="50" ElementStyle="{StaticResource datagridElementStyle}" />
+
+                <DataGridComboBoxColumn Header="Kategoria" SelectedValueBinding="{Binding Kategoria, UpdateSourceTrigger=PropertyChanged}" 
+                                            ItemsSource="{Binding Source={StaticResource KategoriaLista}}"
+                                            MinWidth="100" />
+
+                <DataGridTextColumn Header="Ilość" Binding="{Binding Popularnosc, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
+                                        MinWidth="50" />
+
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>Kupować?</TextBlock>
+                            <CheckBox x:Name="AllSelected"
+                                      IsChecked="{Binding Path=DataContext.AllSelected, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
+                        </StackPanel>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding CzyKupowac, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </DockPanel>
+</Window>
