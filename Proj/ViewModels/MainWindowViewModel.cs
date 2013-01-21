@@ -46,7 +46,7 @@ namespace Proj.ViewModels
         private bool allSelected;
 
         private bool isSaved;
-
+        private bool isBusy;
         private bool isListOk;
 
         private string filePath = string.Empty;
@@ -108,6 +108,19 @@ namespace Proj.ViewModels
             {
                 this.selectedProductIndex = value;
                 OnPropertyChanged("SelectedProductIndex");
+            }
+        }
+
+        public bool IsBusy
+        {
+            get
+            {
+                return isBusy;
+            }
+            set
+            {
+                isBusy = value;
+                OnPropertyChanged("IsBusy");
             }
         }
 
@@ -409,13 +422,35 @@ namespace Proj.ViewModels
         {
 
             string filePath = FileDialogService.ShowOpenFileDialog();
+            ProductsCollection<Product> tmpProductsList = null;
 
             if (!string.IsNullOrEmpty(filePath))
             {
-                Thread.Sleep(10000);
-                this.ProductList = dataService.OpenCollectionFromFile(filePath) as ProductsCollection<Product>;
-                this.FilePath = filePath;
-                this.IsSaved = true;
+                BackgroundWorker bw = new BackgroundWorker();
+                bw.WorkerReportsProgress = true;
+                bw.WorkerSupportsCancellation = true;
+
+                bw.DoWork += delegate(object sender, DoWorkEventArgs e)
+                             {
+                                 this.IsBusy = true;
+                                 BackgroundWorker worker = sender as BackgroundWorker;
+
+                                 for (int i = 0; i < 1; i++)
+                                 {
+                                     worker.ReportProgress(i);
+                                     Thread.Sleep(5000);  //TODO Do testów
+                                 }
+                                 tmpProductsList = dataService.OpenCollectionFromFile(filePath) as ProductsCollection<Product>;
+                             };
+
+                bw.RunWorkerCompleted += delegate(object sender, RunWorkerCompletedEventArgs e)
+                                         {
+                                             this.ProductList = tmpProductsList;
+                                             this.FilePath = filePath;
+                                             this.IsSaved = true;
+                                             this.IsBusy = false;
+                                         };
+                bw.RunWorkerAsync();
             }
         }
 
@@ -567,6 +602,7 @@ namespace Proj.ViewModels
 
         private bool CanShowListWindowCommand(object param)
         {
+            if (IsBusy == true) return false;
             //TODO Popraw:
             if (ProductList.Count == 0) return false;
 
@@ -580,6 +616,7 @@ namespace Proj.ViewModels
 
         private bool CanRemoveCommand(object param)
         {
+            if (IsBusy == true) return false;
             if (SelectedProduct != null)
                 return true;
             else
@@ -588,6 +625,7 @@ namespace Proj.ViewModels
 
         private bool CanMoveCommand(object param)
         {
+            if (IsBusy == true) return false;
             if (SelectedProduct != null)
                 return true;
             else
@@ -597,7 +635,9 @@ namespace Proj.ViewModels
         private bool CanSortListCommand(object param)
         {
             if (ProductList.Count == 0) return false;
-            else return true;
+            if (IsBusy == true) return false;
+            
+            return true;
         }
     }
 

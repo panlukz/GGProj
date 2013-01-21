@@ -5,16 +5,15 @@
         Title="{Binding AppTitle}" Height="500" Width="1000"
         Loaded="Window_Loaded">
     <Window.Resources>
-        
-            <Style TargetType="{x:Type Image}">
+        <Style TargetType="{x:Type Image}">
                 <Style.Triggers>
                     <Trigger Property="IsEnabled" Value="false">
                         <Setter Property="Opacity" Value=".3" />
                     </Trigger>
                 </Style.Triggers>
             </Style>
- 
     </Window.Resources>
+    
     <Window.InputBindings>
         <KeyBinding Command="{Binding NewFileCommand}"
                     Gesture="CTRL+N" />
@@ -38,9 +37,11 @@
         <KeyBinding Command="{Binding RemoveLineCommand}"
                     Gesture="Shift+Delete" />
     </Window.InputBindings>
+    
+
 
     <DockPanel LastChildFill="False">
-        
+
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Plik">
                 <MenuItem Header="_Nowy plik" 
@@ -209,7 +210,7 @@
                 <TextBlock Text="{Binding ProductList.ProductsSaleEarn, StringFormat='Przychód ze sprzedaży produktów: {0} zł'}" />
             </StatusBarItem>
         </StatusBar>
-
+ 
         <DataGrid x:Name="Data" DockPanel.Dock="Top"
                   Grid.Row="0"
                       AutoGenerateColumns="False"
@@ -228,8 +229,19 @@
                       ItemsSource="{Binding ProductList, Mode=TwoWay}"
                       SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
                       SelectedIndex="{Binding SelectedProductIndex, Mode=TwoWay}">
-                      
-            <DataGrid.Resources>
+            
+                <DataGrid.Style>
+                    <Style TargetType="{x:Type DataGrid}">
+                        <Setter Property="Visibility" Value="Visible"></Setter>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsBusy}" Value="true">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Style>
+
+                <DataGrid.Resources>
                 
                 <ObjectDataProvider x:Key="JednostkaSprzedazyLista" MethodName="GetValues" ObjectType="{x:Type data:JednostkiSprzedazy}">
                     <ObjectDataProvider.MethodParameters>
@@ -254,7 +266,6 @@
 
                     </Style.Triggers>
                 </Style>
-            
             </DataGrid.Resources>
 
             <DataGrid.ContextMenu>
@@ -316,6 +327,21 @@
             </DataGrid.Columns>
 
         </DataGrid>
-
+        
+        
+        <TextBlock>
+            <TextBlock.Style>
+                <Style>
+                    <Setter Property="TextBlock.Visibility" Value="Collapsed"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsBusy}" Value="true">
+                            <Setter Property="TextBlock.Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+            Wczytywanie...
+        </TextBlock>
+        
     </DockPanel>
 </Window>
