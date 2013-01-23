@@ -117,4 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AppName" xml:space="preserve">
+    <value>Very nice app</value>
+  </data>
+  <data name="MenuAddLine" xml:space="preserve">
+    <value>_Add line</value>
+  </data>
+  <data name="MenuByBuySelection" xml:space="preserve">
+    <value>By "Buy" selection</value>
+  </data>
+  <data name="MenuByCategoryAsc" xml:space="preserve">
+    <value>By category ascending</value>
+  </data>
+  <data name="MenuByCategoryDesc" xml:space="preserve">
+    <value>By category descending</value>
+  </data>
+  <data name="MenuByNameAsc" xml:space="preserve">
+    <value>By name ascending</value>
+  </data>
+  <data name="MenuByNameDesc" xml:space="preserve">
+    <value>By name descending</value>
+  </data>
+  <data name="MenuByPurchasePriceAsc" xml:space="preserve">
+    <value>By purchase price ascending</value>
+  </data>
+  <data name="MenuByPurchasePriceDesc" xml:space="preserve">
+    <value>By purchase price descending</value>
+  </data>
+  <data name="MenuByQuantityAsc" xml:space="preserve">
+    <value>By quantity ascending</value>
+  </data>
+  <data name="MenuByQuantityDesc" xml:space="preserve">
+    <value>By quantity descending</value>
+  </data>
+  <data name="MenuBySellPriceAsc" xml:space="preserve">
+    <value>By sell price ascending</value>
+  </data>
+  <data name="MenuBySellPriceDesc" xml:space="preserve">
+    <value>By sell price descending</value>
+  </data>
+  <data name="MenuCreate" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="MenuCreateSellList" xml:space="preserve">
+    <value>Create sell list...</value>
+  </data>
+  <data name="MenuCreateShoppingList" xml:space="preserve">
+    <value>Create shopping list...</value>
+  </data>
+  <data name="MenuExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MenuFile" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="MenuHelp" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="MenuInformation" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="MenuList" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="MenuNewFile" xml:space="preserve">
+    <value>New file</value>
+  </data>
+  <data name="MenuOpenFile" xml:space="preserve">
+    <value>Open file...</value>
+  </data>
+  <data name="MenuOppToBuySelection" xml:space="preserve">
+    <value>Opposite to "Buy" selection</value>
+  </data>
+  <data name="MenuRemoveLine" xml:space="preserve">
+    <value>Remove line</value>
+  </data>
+  <data name="MenuSaveAsFile" xml:space="preserve">
+    <value>Save file as...</value>
+  </data>
+  <data name="MenuSaveFile" xml:space="preserve">
+    <value>Save file</value>
+  </data>
+  <data name="MenuSort" xml:space="preserve">
+    <value>Sort</value>
+  </data>
 </root>

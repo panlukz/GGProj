@@ -1,6 +1,7 @@
 ﻿<Window x:Class="Proj.Views.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="clr-namespace:Proj.Loc"
         xmlns:data="clr-namespace:Proj.Model"
         Title="{Binding AppTitle}" Height="500" Width="1000"
         Loaded="Window_Loaded">
@@ -12,6 +13,7 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
+        
     </Window.Resources>
     
     <Window.InputBindings>
@@ -43,83 +45,83 @@
     <DockPanel LastChildFill="False">
 
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_Plik">
-                <MenuItem Header="_Nowy plik" 
+            <MenuItem Header="{x:Static loc:Lang.MenuFile}">
+                <MenuItem Header="{x:Static loc:Lang.MenuNewFile}" 
                           Command="{Binding NewFileCommand}" 
                           InputGestureText="Ctrl+N" />
-                <MenuItem Header="_Otworz plik..." 
+                <MenuItem Header="{x:Static loc:Lang.MenuOpenFile}" 
                           Command="{Binding OpenFileCommand}"
                           InputGestureText="Ctrl+O" />
-                <MenuItem Header="_Zapisz plik..." 
+                <MenuItem Header="{x:Static loc:Lang.MenuSaveFile}" 
                           Command="{Binding SaveFileCommand}" 
                           InputGestureText="Ctrl+S" />
-                <MenuItem Header="_Zapisz plik jako..." 
+                <MenuItem Header="{x:Static loc:Lang.MenuSaveAsFile}" 
                           Command="{Binding SaveAsFileCommand}" />
-                <MenuItem Header="_Wyjscie" 
+                <MenuItem Header="{x:Static loc:Lang.MenuExit}" 
                           Command="{Binding CloseAppCommand}"
                           InputGestureText="Atl+F4" />
             </MenuItem>
             <MenuItem Header="_Operacje">
-                <MenuItem Header="_Dodaj linię"
+                <MenuItem Header="{x:Static loc:Lang.MenuAddLine}"
                           Command="{Binding AddLineCommand}" 
                           InputGestureText="Insert" />
-                <MenuItem Header="_Usuń linię" 
+                <MenuItem Header="{x:Static loc:Lang.MenuRemoveLine}" 
                           Command="{Binding RemoveLineCommand}"
                           InputGestureText="Delete" />
-                <MenuItem Header="_Sortuj">
-                    <MenuItem Header="Według nazwy rosnąco" 
+                <MenuItem Header="{x:Static loc:Lang.MenuSort}">
+                    <MenuItem Header="{x:Static loc:Lang.MenuByNameAsc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Nazwa Ascending" />
-                    <MenuItem Header="Według nazwy malejąco" 
+                    <MenuItem Header="{x:Static loc:Lang.MenuByNameDesc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Nazwa Descending" />
                     <Separator />
-                    <MenuItem Header="Według ceny zakupu rosnąco"
+                    <MenuItem Header="{x:Static loc:Lang.MenuByPurchasePriceAsc}"
                               Command="{Binding SortListCommand}"
                               CommandParameter="CenaZakupu Ascending" />
-                    <MenuItem Header="Według ceny zakupu malejąco" 
+                    <MenuItem Header="{x:Static loc:Lang.MenuByPurchasePriceDesc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="CenaZakupu Descending" />
                     <Separator />
-                    <MenuItem Header="Według ceny sprzedaży rosnąco"
+                    <MenuItem Header="{x:Static loc:Lang.MenuBySellPriceAsc}"
                               Command="{Binding SortListCommand}"
                               CommandParameter="CenaSprzedazy Ascending"/>
-                    <MenuItem Header="Według ceny sprzedaży malejąco"
+                    <MenuItem Header="{x:Static loc:Lang.MenuBySellPriceDesc}"
                               Command="{Binding SortListCommand}"
                               CommandParameter="CenaSprzedazy Descending" />
                     <Separator />
-                    <MenuItem Header="Według kategorii rosnąco" 
+                    <MenuItem Header="{x:Static loc:Lang.MenuByCategoryAsc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Kategoria Ascending" />
-                    <MenuItem Header="Według kategorii malejąco" 
+                    <MenuItem Header="{x:Static loc:Lang.MenuByCategoryDesc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Kategoria Descending" />
                     <Separator />
-                    <MenuItem Header="Według ilości rosnąco" 
+                    <MenuItem Header="{x:Static loc:Lang.MenuByQuantityAsc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Ilosc Ascending" />
-                    <MenuItem Header="Według ilości malejąco" 
+                    <MenuItem Header="{x:Static loc:Lang.MenuByQuantityDesc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Ilosc Descending" />
                     <Separator />
-                    <MenuItem Header="Według zaznaczenia Kupować?" 
+                    <MenuItem Header="{x:Static loc:Lang.MenuByBuySelection}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="CzyKupowac Descending" />
-                    <MenuItem Header="Odwrotnie do zaznaczenia Kupować?" 
+                    <MenuItem Header="{x:Static loc:Lang.MenuOppToBuySelection}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="CzyKupowac Ascending" />
                 </MenuItem>
-                <MenuItem Header="_Generuj listę zakupów..."
+                <MenuItem Header="{x:Static loc:Lang.MenuCreateShoppingList}"
                           Command="{Binding ListWindowCommand}"
                           CommandParameter="shoppingList" 
                           InputGestureText="F4" />
-                <MenuItem Header="_Generuj listę sprzedaży..." 
+                <MenuItem Header="{x:Static loc:Lang.MenuCreateSellList}" 
                           Command="{Binding ListWindowCommand}"
                           CommandParameter="sellList" 
                           InputGestureText="F5" />
             </MenuItem>
-            <MenuItem Header="P_omoc">
-                <MenuItem Header="_Informacje..." 
+            <MenuItem Header="{x:Static loc:Lang.MenuHelp}">
+                <MenuItem Header="{x:Static loc:Lang.MenuInformation}" 
                           Command="{Binding AboutWindowCommand}" 
                           InputGestureText="F1" />
             </MenuItem>
@@ -211,35 +213,19 @@
             </StatusBarItem>
         </StatusBar>
  
-        <DataGrid x:Name="Data" DockPanel.Dock="Top"
-                  Grid.Row="0"
+        <DataGrid x:Name="Data" 
+                      DockPanel.Dock="Top"
+                      Grid.Row="0"
                       AutoGenerateColumns="False"
-                      GridLinesVisibility="None"
-                      HeadersVisibility="Column"
                       SelectionMode="Single"
-                      BorderThickness="0,0,0,0"
-                      RowHeight="30"
-                      HorizontalContentAlignment="Center"
                       CanUserResizeColumns="False"
                       CanUserResizeRows="False"
                       CanUserSortColumns="False"
                       CanUserDeleteRows="False"
-                      FontSize="14"
                       CanUserAddRows="False"
                       ItemsSource="{Binding ProductList, Mode=TwoWay}"
                       SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
                       SelectedIndex="{Binding SelectedProductIndex, Mode=TwoWay}">
-            
-                <DataGrid.Style>
-                    <Style TargetType="{x:Type DataGrid}">
-                        <Setter Property="Visibility" Value="Visible"></Setter>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding IsBusy}" Value="true">
-                                <Setter Property="Visibility" Value="Collapsed" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </DataGrid.Style>
 
                 <DataGrid.Resources>
                 

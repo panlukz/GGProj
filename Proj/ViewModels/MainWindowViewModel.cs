@@ -183,8 +183,8 @@ namespace Proj.ViewModels
         public string AppTitle
         {
             get
-            { 
-                string appName = "Bardzo fajny program";
+            {
+                string appName = Loc.Lang.AppName;
                 if (String.IsNullOrEmpty(FileName))
                     return appName + " - Nowy plik";
                 else
@@ -426,6 +426,7 @@ namespace Proj.ViewModels
 
             if (!string.IsNullOrEmpty(filePath))
             {
+                //TODO Zmien to na TaskFactory
                 BackgroundWorker bw = new BackgroundWorker();
                 bw.WorkerReportsProgress = true;
                 bw.WorkerSupportsCancellation = true;
@@ -438,19 +439,20 @@ namespace Proj.ViewModels
                                  for (int i = 0; i < 1; i++)
                                  {
                                      worker.ReportProgress(i);
-                                     Thread.Sleep(5000);  //TODO Do testów
+                                     //Thread.Sleep(5000);  //TODO Do testów
                                  }
                                  tmpProductsList = dataService.OpenCollectionFromFile(filePath) as ProductsCollection<Product>;
                              };
 
                 bw.RunWorkerCompleted += delegate(object sender, RunWorkerCompletedEventArgs e)
                                          {
+                                             this.IsBusy = false;
                                              this.ProductList = tmpProductsList;
                                              this.FilePath = filePath;
                                              this.IsSaved = true;
-                                             this.IsBusy = false;
                                          };
-                bw.RunWorkerAsync();
+
+                if(bw.IsBusy == false) bw.RunWorkerAsync();
             }
         }
 
@@ -485,8 +487,7 @@ namespace Proj.ViewModels
         }
 
         private void AddLine(object param)
-        {
-
+        {   
             Product NewProduct = new Product {
                     Nazwa = "Nowy produkt",
                     CenaZakupu = 1,
@@ -502,8 +503,8 @@ namespace Proj.ViewModels
             }
             else
             {
-                ProductList.Insert(ProductList.IndexOf(SelectedProduct), NewProduct);
-                SelectedProductIndex -= 1;
+                ProductList.Insert(ProductList.IndexOf(SelectedProduct)+1, NewProduct);
+                SelectedProductIndex += 1;
             }       
         }
 
@@ -612,6 +613,7 @@ namespace Proj.ViewModels
                     return false;
             }
             return true;
+            
         }
 
         private bool CanRemoveCommand(object param)

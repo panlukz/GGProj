@@ -22,6 +22,12 @@ namespace Proj
             MessengerService.ShowMessageBox(e.Exception.Message, "Błąd", MessengerService.MessageType.OK, MessengerService.MessageIcon.Error);
             e.Handled = true;
         }
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            //TODO Do testow lokalizacji werjsa polska:
+            //Proj.Properties.Resources.Culture = new System.Globalization.CultureInfo("pl");
+        }
     }
 
     
