@@ -205,10 +205,9 @@ namespace Proj.ViewModels
                 OnPropertyChanged("AllSelected");
                 if (ProductList != null)
                 {
-                    foreach (Product product in ProductList)
-                    {
-                        product.CzyKupowac = value;
-                    }
+                    Parallel.ForEach(ProductList, product => {
+                                                                 product.CzyKupowac = value;
+                                                             });
                 }
 
                 
