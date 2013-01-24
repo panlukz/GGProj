@@ -26,7 +26,7 @@ namespace Proj
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             //TODO Do testow lokalizacji werjsa polska:
-            //Proj.Properties.Resources.Culture = new System.Globalization.CultureInfo("pl");
+            //Proj.Loc.Lang.Culture = new System.Globalization.CultureInfo("pl");
         }
     }
 

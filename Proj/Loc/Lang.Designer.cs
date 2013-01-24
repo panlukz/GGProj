@@ -70,6 +70,96 @@ namespace Proj.Loc {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kup.
+        /// </summary>
+        public static string GridBuy {
+            get {
+                return ResourceManager.GetString("GridBuy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kategoria.
+        /// </summary>
+        public static string GridCategory {
+            get {
+                return ResourceManager.GetString("GridCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max. ilość.
+        /// </summary>
+        public static string GridMaxQty {
+            get {
+                return ResourceManager.GetString("GridMaxQty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Min. ilość.
+        /// </summary>
+        public static string GridMinQty {
+            get {
+                return ResourceManager.GetString("GridMinQty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ID.
+        /// </summary>
+        public static string GridProductId {
+            get {
+                return ResourceManager.GetString("GridProductId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nazwa.
+        /// </summary>
+        public static string GridProductName {
+            get {
+                return ResourceManager.GetString("GridProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cena zakupu.
+        /// </summary>
+        public static string GridPurchasePrice {
+            get {
+                return ResourceManager.GetString("GridPurchasePrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ilość.
+        /// </summary>
+        public static string GridQty {
+            get {
+                return ResourceManager.GetString("GridQty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cena sprzedaży.
+        /// </summary>
+        public static string GridSalePrice {
+            get {
+                return ResourceManager.GetString("GridSalePrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jednostka sprzedaży.
+        /// </summary>
+        public static string GridSaleUnit {
+            get {
+                return ResourceManager.GetString("GridSaleUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Dodaj linię.
         /// </summary>
         public static string MenuAddLine {
@@ -189,9 +279,9 @@ namespace Proj.Loc {
         /// <summary>
         ///   Looks up a localized string similar to Generuj listę _sprzedaży....
         /// </summary>
-        public static string MenuCreateSellList {
+        public static string MenuCreateSalesList {
             get {
-                return ResourceManager.GetString("MenuCreateSellList", resourceCulture);
+                return ResourceManager.GetString("MenuCreateSalesList", resourceCulture);
             }
         }
         
@@ -309,6 +399,123 @@ namespace Proj.Loc {
         public static string MenuSort {
             get {
                 return ResourceManager.GetString("MenuSort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ilość produktów do kupienia:.
+        /// </summary>
+        public static string StatusbarBuyNumber {
+            get {
+                return ResourceManager.GetString("StatusbarBuyNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Przychód ze sprzedaży:.
+        /// </summary>
+        public static string StatusbarIncome {
+            get {
+                return ResourceManager.GetString("StatusbarIncome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Koszt zakupu:.
+        /// </summary>
+        public static string StatusbarPurchaseCost {
+            get {
+                return ResourceManager.GetString("StatusbarPurchaseCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ilość wszystkich produktów:.
+        /// </summary>
+        public static string StatusbarTotalNumber {
+            get {
+                return ResourceManager.GetString("StatusbarTotalNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dodaj linię.
+        /// </summary>
+        public static string ToolbarBtnAddLine {
+            get {
+                return ResourceManager.GetString("ToolbarBtnAddLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generuj listę sprzedaży.
+        /// </summary>
+        public static string ToolbarBtnCreateSalesList {
+            get {
+                return ResourceManager.GetString("ToolbarBtnCreateSalesList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generuj listę zakupów.
+        /// </summary>
+        public static string ToolbarBtnCreateShoppingList {
+            get {
+                return ResourceManager.GetString("ToolbarBtnCreateShoppingList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Przesuń w dół.
+        /// </summary>
+        public static string ToolbarBtnMoveDown {
+            get {
+                return ResourceManager.GetString("ToolbarBtnMoveDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Przesuń w górę.
+        /// </summary>
+        public static string ToolbarBtnMoveUp {
+            get {
+                return ResourceManager.GetString("ToolbarBtnMoveUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nowy plik.
+        /// </summary>
+        public static string ToolbarBtnNewFile {
+            get {
+                return ResourceManager.GetString("ToolbarBtnNewFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Otwórz plik.
+        /// </summary>
+        public static string ToolbarBtnOpenFile {
+            get {
+                return ResourceManager.GetString("ToolbarBtnOpenFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuń linię.
+        /// </summary>
+        public static string ToolbarBtnRemoveLine {
+            get {
+                return ResourceManager.GetString("ToolbarBtnRemoveLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zapisz plik.
+        /// </summary>
+        public static string ToolbarBtnSaveFile {
+            get {
+                return ResourceManager.GetString("ToolbarBtnSaveFile", resourceCulture);
             }
         }
     }

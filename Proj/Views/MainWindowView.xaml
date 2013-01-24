@@ -61,61 +61,63 @@
                           Command="{Binding CloseAppCommand}"
                           InputGestureText="Atl+F4" />
             </MenuItem>
-            <MenuItem Header="_Operacje">
+            <MenuItem Header="{x:Static loc:Lang.MenuList}">
                 <MenuItem Header="{x:Static loc:Lang.MenuAddLine}"
                           Command="{Binding AddLineCommand}" 
                           InputGestureText="Insert" />
                 <MenuItem Header="{x:Static loc:Lang.MenuRemoveLine}" 
                           Command="{Binding RemoveLineCommand}"
                           InputGestureText="Delete" />
-                <MenuItem Header="{x:Static loc:Lang.MenuSort}">
-                    <MenuItem Header="{x:Static loc:Lang.MenuByNameAsc}" 
+            </MenuItem>
+            <MenuItem Header="{x:Static loc:Lang.MenuSort}">
+                <MenuItem Header="{x:Static loc:Lang.MenuByNameAsc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Nazwa Ascending" />
-                    <MenuItem Header="{x:Static loc:Lang.MenuByNameDesc}" 
+                <MenuItem Header="{x:Static loc:Lang.MenuByNameDesc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Nazwa Descending" />
-                    <Separator />
-                    <MenuItem Header="{x:Static loc:Lang.MenuByPurchasePriceAsc}"
+                <Separator />
+                <MenuItem Header="{x:Static loc:Lang.MenuByPurchasePriceAsc}"
                               Command="{Binding SortListCommand}"
                               CommandParameter="CenaZakupu Ascending" />
-                    <MenuItem Header="{x:Static loc:Lang.MenuByPurchasePriceDesc}" 
+                <MenuItem Header="{x:Static loc:Lang.MenuByPurchasePriceDesc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="CenaZakupu Descending" />
-                    <Separator />
-                    <MenuItem Header="{x:Static loc:Lang.MenuBySellPriceAsc}"
+                <Separator />
+                <MenuItem Header="{x:Static loc:Lang.MenuBySellPriceAsc}"
                               Command="{Binding SortListCommand}"
                               CommandParameter="CenaSprzedazy Ascending"/>
-                    <MenuItem Header="{x:Static loc:Lang.MenuBySellPriceDesc}"
+                <MenuItem Header="{x:Static loc:Lang.MenuBySellPriceDesc}"
                               Command="{Binding SortListCommand}"
                               CommandParameter="CenaSprzedazy Descending" />
-                    <Separator />
-                    <MenuItem Header="{x:Static loc:Lang.MenuByCategoryAsc}" 
+                <Separator />
+                <MenuItem Header="{x:Static loc:Lang.MenuByCategoryAsc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Kategoria Ascending" />
-                    <MenuItem Header="{x:Static loc:Lang.MenuByCategoryDesc}" 
+                <MenuItem Header="{x:Static loc:Lang.MenuByCategoryDesc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Kategoria Descending" />
-                    <Separator />
-                    <MenuItem Header="{x:Static loc:Lang.MenuByQuantityAsc}" 
+                <Separator />
+                <MenuItem Header="{x:Static loc:Lang.MenuByQuantityAsc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Ilosc Ascending" />
-                    <MenuItem Header="{x:Static loc:Lang.MenuByQuantityDesc}" 
+                <MenuItem Header="{x:Static loc:Lang.MenuByQuantityDesc}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="Ilosc Descending" />
-                    <Separator />
-                    <MenuItem Header="{x:Static loc:Lang.MenuByBuySelection}" 
+                <Separator />
+                <MenuItem Header="{x:Static loc:Lang.MenuByBuySelection}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="CzyKupowac Descending" />
-                    <MenuItem Header="{x:Static loc:Lang.MenuOppToBuySelection}" 
+                <MenuItem Header="{x:Static loc:Lang.MenuOppToBuySelection}" 
                               Command="{Binding SortListCommand}"
                               CommandParameter="CzyKupowac Ascending" />
-                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{x:Static loc:Lang.MenuCreate}">
                 <MenuItem Header="{x:Static loc:Lang.MenuCreateShoppingList}"
                           Command="{Binding ListWindowCommand}"
                           CommandParameter="shoppingList" 
                           InputGestureText="F4" />
-                <MenuItem Header="{x:Static loc:Lang.MenuCreateSellList}" 
+                <MenuItem Header="{x:Static loc:Lang.MenuCreateSalesList}" 
                           Command="{Binding ListWindowCommand}"
                           CommandParameter="sellList" 
                           InputGestureText="F5" />
@@ -130,19 +132,19 @@
         <ToolBar DockPanel.Dock="Top">
             <Button Width="48" Height="48"
                     Command="{Binding NewFileCommand}"
-                    ToolTip="Nowy plik">
+                    ToolTip="{x:Static loc:Lang.ToolbarBtnNewFile}">
                 <Image Source="..\Resources\icons\new.png"
                        Width="32" Height="32" />
             </Button>
             <Button Width="48" Height="48"
                     Command="{Binding OpenFileCommand}"
-                    ToolTip="Otwórz plik">
+                    ToolTip="{x:Static loc:Lang.ToolbarBtnOpenFile}">
                 <Image Source="..\Resources\icons\open.png"
                        Width="32" Height="32" />
             </Button>
             <Button Width="48" Height="48"
                     Command="{Binding SaveFileCommand}"
-                    ToolTip="Zapisz plik">
+                    ToolTip="{x:Static loc:Lang.ToolbarBtnSaveFile}">
                 <Image Source="..\Resources\icons\save.png"
                        Width="32" Height="32" />
             </Button>
@@ -151,27 +153,27 @@
             
             <Button Width="48" Height="48"
                     Command="{Binding AddLineCommand}"
-                    ToolTip="Dodaj linię">
+                    ToolTip="{x:Static loc:Lang.ToolbarBtnAddLine}">
                 <Image Source="..\Resources\icons\add.png"
                        Width="32" Height="32" />
             </Button>
             <Button Width="48" Height="48"
                     Command="{Binding RemoveLineCommand}"
-                    ToolTip="Usuń linię">
+                    ToolTip="{x:Static loc:Lang.ToolbarBtnRemoveLine}">
                 <Image Source="..\Resources\icons\delete.png"
                        Width="32" Height="32" />
             </Button>
             <Button Width="48" Height="48"
                     Command="{Binding MoveCommand}"
                     CommandParameter="Up"
-                    ToolTip="Przenieś w górę">
+                    ToolTip="{x:Static loc:Lang.ToolbarBtnMoveUp}">
                 <Image Source="..\Resources\icons\up.png"
                        Width="32" Height="32" />
             </Button>
             <Button Width="48" Height="48"
                     Command="{Binding MoveCommand}"
                     CommandParameter="Down"
-                    ToolTip="Przenieś w dół">
+                    ToolTip="{x:Static loc:Lang.ToolbarBtnMoveDown}">
                 <Image Source="..\Resources\icons\down.png"
                        Width="32" Height="32" />
             </Button>
@@ -181,14 +183,14 @@
             <Button Width="48" Height="48"
                     Command="{Binding ListWindowCommand}"
                     CommandParameter="shoppingList"
-                    ToolTip="Generuj listę zakupów">
+                    ToolTip="{x:Static loc:Lang.ToolbarBtnCreateShoppingList}">
                 <Image Source="..\Resources\icons\cart.png"
                        Width="32" Height="32" />
             </Button>
             <Button Width="48" Height="48"
                     Command="{Binding ListWindowCommand}"
                     CommandParameter="sellList"
-                    ToolTip="Generuj listę sprzedaży">
+                    ToolTip="{x:Static loc:Lang.ToolbarBtnCreateSalesList}">
 
                 <Image Source="..\Resources\icons\coins.png"
                        Width="32" Height="32" />
@@ -197,19 +199,32 @@
 
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem>
-                <TextBlock Text="{Binding ProductList.ProductsCount, StringFormat='Ilość wszystkich produktów: {0}'}" />
+                <TextBlock >
+                    <Run Text="{x:Static loc:Lang.StatusbarTotalNumber}"/>
+                    <Run Text="{Binding ProductList.ProductsCount, Mode=OneWay}" />
+                </TextBlock>
+                
             </StatusBarItem>
             <Separator />
             <StatusBarItem>
-                <TextBlock Text="{Binding ProductList.ProductsToBuyCount, StringFormat='Ilość produktów do kupienia: {0}'}" />
+                <TextBlock>
+                    <Run Text="{x:Static loc:Lang.StatusbarBuyNumber}" />
+                    <Run Text="{Binding ProductList.ProductsToBuyCount, Mode=OneWay}" />
+                </TextBlock>
             </StatusBarItem>
             <Separator />
             <StatusBarItem>
-                <TextBlock Text="{Binding ProductList.ProductsPurchaseCost, StringFormat='Koszt zakupu produktów: {0} zł'}" />
+                <TextBlock>
+                    <Run Text="{x:Static loc:Lang.StatusbarPurchaseCost}" />
+                    <Run Text="{Binding ProductList.ProductsPurchaseCost, StringFormat=' {0:C}', Mode=OneWay}" />
+                </TextBlock>
             </StatusBarItem>
             <Separator />
             <StatusBarItem>
-                <TextBlock Text="{Binding ProductList.ProductsSaleEarn, StringFormat='Przychód ze sprzedaży produktów: {0} zł'}" />
+                <TextBlock>
+                    <Run Text="{x:Static loc:Lang.StatusbarIncome}" />
+                    <Run Text="{Binding ProductList.ProductsSaleEarn, StringFormat=' {0:C}', Mode=OneWay}" />
+                </TextBlock>
             </StatusBarItem>
         </StatusBar>
  
@@ -256,49 +271,49 @@
 
             <DataGrid.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Dodaj linię..." 
+                    <MenuItem Header="{x:Static loc:Lang.MenuAddLine}" 
                               Command="{Binding AddLineCommand}" />
-                    <MenuItem Header="Usuń linię..." 
+                    <MenuItem Header="{x:Static loc:Lang.MenuRemoveLine}" 
                               Command="{Binding RemoveLineCommand}" />
                 </ContextMenu>
             </DataGrid.ContextMenu>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Nr, UpdateSourceTrigger=LostFocus}" 
+                <DataGridTextColumn Header="{x:Static loc:Lang.GridProductId}" Binding="{Binding Nr, UpdateSourceTrigger=LostFocus}" 
                                         MinWidth="50" />
 
-                <DataGridTextColumn Header="Nazwa" Binding="{Binding Nazwa, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
+                <DataGridTextColumn Header="{x:Static loc:Lang.GridProductName}" Binding="{Binding Nazwa, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
                                         MinWidth="100" Width="*" ElementStyle="{StaticResource datagridElementStyle}" />
 
-                <DataGridTextColumn Header="Cena zakupu" MinWidth="100" 
+                <DataGridTextColumn Header="{x:Static loc:Lang.GridPurchasePrice}" MinWidth="100" 
                                     Binding="{Binding CenaZakupu, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
                                     ElementStyle="{StaticResource datagridElementStyle}" />
 
-                <DataGridTextColumn Header="Cena sprzedaży" MinWidth="100" 
+                <DataGridTextColumn Header="{x:Static loc:Lang.GridSalePrice}" MinWidth="100" 
                                     Binding="{Binding CenaSprzedazy, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
                                     ElementStyle="{StaticResource datagridElementStyle}" />
 
-                <DataGridComboBoxColumn Header="Jednostka" SelectedValueBinding="{Binding JednostkaSprzedazy, UpdateSourceTrigger=PropertyChanged}" 
+                <DataGridComboBoxColumn Header="{x:Static loc:Lang.GridSaleUnit}" SelectedValueBinding="{Binding JednostkaSprzedazy, UpdateSourceTrigger=PropertyChanged}" 
                                             ItemsSource="{Binding Source={StaticResource JednostkaSprzedazyLista}}" 
                                             MinWidth="50" />
 
-                <DataGridTextColumn Header="Min. ilość" Binding="{Binding MinIloscSprzedazy, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
+                <DataGridTextColumn Header="{x:Static loc:Lang.GridMinQty}" Binding="{Binding MinIloscSprzedazy, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
                                         MinWidth="50" ElementStyle="{StaticResource datagridElementStyle}" />
 
-                <DataGridTextColumn Header="Max. ilość" Binding="{Binding MaxIloscSprzedazy, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
+                <DataGridTextColumn Header="{x:Static loc:Lang.GridMaxQty}" Binding="{Binding MaxIloscSprzedazy, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
                                         MinWidth="50" ElementStyle="{StaticResource datagridElementStyle}" />
 
-                <DataGridComboBoxColumn Header="Kategoria" SelectedValueBinding="{Binding Kategoria, UpdateSourceTrigger=PropertyChanged}" 
+                <DataGridComboBoxColumn Header="{x:Static loc:Lang.GridCategory}" SelectedValueBinding="{Binding Kategoria, UpdateSourceTrigger=PropertyChanged}" 
                                             ItemsSource="{Binding Source={StaticResource KategoriaLista}}"
                                             MinWidth="100" />
 
-                <DataGridTextColumn Header="Ilość" Binding="{Binding Popularnosc, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
+                <DataGridTextColumn Header="{x:Static loc:Lang.GridQty}" Binding="{Binding Popularnosc, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" 
                                         MinWidth="50" />
 
                 <DataGridTemplateColumn Width="100">
                     <DataGridTemplateColumn.Header>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock>Kupować?</TextBlock>
+                            <TextBlock Text="{x:Static loc:Lang.GridBuy}" />
                             <CheckBox x:Name="AllSelected"
                                       IsChecked="{Binding Path=DataContext.AllSelected, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
                         </StackPanel>
