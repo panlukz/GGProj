@@ -90,15 +90,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Converters\ShortToFullNameCultureInfoSelectedItemConverter.cs" />
+    <Compile Include="Converters\ShortToFullNamesCultureInfoItemsSourceConverter.cs" />
     <Compile Include="Loc\Lang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Lang.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Loc\Lang.en.Designer.cs">
-      <DependentUpon>Lang.en.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Services\MessengerService.cs" />
     <Compile Include="Services\ProcessProductsListService.cs" />
@@ -107,6 +104,7 @@
     <Compile Include="Data\DataService.cs" />
     <Compile Include="Services\FileDialogService.cs" />
     <Compile Include="TestClass.cs" />
+    <Compile Include="ViewModels\OptionsWindowViewModel.cs" />
     <Compile Include="Views\AboutWindowView.xaml.cs">
       <DependentUpon>AboutWindowView.xaml</DependentUpon>
     </Compile>
@@ -116,6 +114,9 @@
       <DependentUpon>ListWindowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\OptionsWindowView.xaml.cs">
+      <DependentUpon>OptionsWindowView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\AboutWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,6 +141,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\OptionsWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -155,10 +160,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Loc\Lang.en.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Lang.en.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Loc\Lang.en.resx" />
     <EmbeddedResource Include="Loc\Lang.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Lang.Designer.cs</LastGenOutput>
@@ -169,7 +171,7 @@
     </EmbeddedResource>
     <None Include="Proj_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
