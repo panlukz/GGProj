@@ -1,0 +1,71 @@
+﻿using Proj.Commands;
+using Proj.Properties;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Resources;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+
+namespace Proj.ViewModels
+{
+    class OptionsWindowViewModel : ViewModelBase
+    {
+
+        private List<CultureInfo> languagesList = null;
+        public List<CultureInfo> LanguageList
+        {
+            get 
+            {
+                if (languagesList == null)
+                {
+                    languagesList = new List<CultureInfo>();
+
+                    ResourceManager resourceManager = new ResourceManager(typeof(Loc.Lang));
+                    CultureInfo[] allCultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+                    foreach (CultureInfo c in allCultures)
+                    {
+                        ResourceSet resourceSet = resourceManager.GetResourceSet(c, true, false);
+                        if (resourceSet != null && c.LCID != 127) languagesList.Add(c);
+                    }
+                }
+
+                return this.languagesList;
+            }
+        }
+
+        public CultureInfo Language
+        {
+            get { return Settings.Default.Language; }
+            set 
+            { 
+                Settings.Default.Language = value;
+                OnPropertyChanged("Language");
+            }
+        }
+
+        public void Save(object ignore)
+        {
+            Settings.Default.Save();
+        }
+
+        #region Commands
+
+        private RelayCommand saveOptionsCommand;
+        public ICommand SaveOptionsCommand
+        {
+            get
+            {
+                if (this.saveOptionsCommand == null)
+                {
+                    this.saveOptionsCommand = new RelayCommand(this.Save);
+                }
+                return this.saveOptionsCommand;
+            }
+        }
+
+        #endregion
+    }
+}
