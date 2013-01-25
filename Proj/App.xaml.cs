@@ -8,6 +8,12 @@ using System.Windows;
 using System.Windows.Threading;
 
 using Proj.Services;
+using System.Threading;
+using System.Globalization;
+using Proj.ViewModels;
+using Proj.Views;
+using Proj.Properties;
+using System.Resources;
 
 namespace Proj
 {
@@ -25,10 +31,20 @@ namespace Proj
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            //TODO Do testow lokalizacji werjsa polska:
-            //Proj.Loc.Lang.Culture = new System.Globalization.CultureInfo("pl");
-        }
-    }
 
-    
+            //TODO Do testow lokalizacji
+            string language = Settings.Default.Language.ToString();
+            if (String.IsNullOrEmpty(language))
+            {
+                Settings.Default.Language = Thread.CurrentThread.CurrentUICulture;
+                Settings.Default.Save();
+            }
+            else
+                Proj.Loc.Lang.Culture = new System.Globalization.CultureInfo(language);
+
+            OptionsWindowView options = new OptionsWindowView();
+            options.Show();
+        }
+
+    }    
 }
