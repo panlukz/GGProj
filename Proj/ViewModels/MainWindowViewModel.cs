@@ -382,13 +382,35 @@ namespace Proj.ViewModels
             }
         }
 
+        private RelayCommand showOptionsCommand;
+        public ICommand ShowOptionsCommand
+        {
+            get
+            {
+                if (this.showOptionsCommand == null)
+                {
+                    this.showOptionsCommand = new RelayCommand(this.ShowOptionsWindow);
+                }
+                return this.showOptionsCommand;
+            }
+        }
+
         #endregion
 
         #region Helper Methods
 
         private void ShowAboutWindow(object ignore)
         {
+            //TODO usun view z viewmodel:)
             AboutWindowView about = new AboutWindowView();
+            about.Owner = Application.Current.MainWindow;
+            about.ShowDialog();
+        }
+
+        private void ShowOptionsWindow(object ignore)
+        {
+            //TODO usun view z viewmodel:)
+            OptionsWindowView about = new OptionsWindowView();
             about.Owner = Application.Current.MainWindow;
             about.ShowDialog();
         }
@@ -410,6 +432,7 @@ namespace Proj.ViewModels
                     break;
             }
 
+            //TODO usun view z viewmodel:)
             ListWindowViewModel listWindowViewModel = new ListWindowViewModel(listType) { ProductList = showList  };
             ListWindowView listWindow = new ListWindowView(listWindowViewModel);
             
@@ -435,11 +458,7 @@ namespace Proj.ViewModels
                                  this.IsBusy = true;
                                  BackgroundWorker worker = sender as BackgroundWorker;
 
-                                 for (int i = 0; i < 1; i++)
-                                 {
-                                     worker.ReportProgress(i);
-                                     //Thread.Sleep(5000);  //TODO Do testów
-                                 }
+                                 //Thread.Sleep(5000);  //TODO Do testów
                                  tmpProductsList = dataService.OpenCollectionFromFile(filePath) as ProductsCollection<Product>;
                              };
 
@@ -452,6 +471,17 @@ namespace Proj.ViewModels
                                          };
 
                 if(bw.IsBusy == false) bw.RunWorkerAsync();
+               
+                //TODO DO TESTOW, Dokonczyc:
+                //Task.Factory.StartNew(() =>
+                //{
+                //    this.IsBusy = true;
+                //    Thread.Sleep(2000); //TODO DO TESTOW
+                //    this.ProductList = dataService.OpenCollectionFromFile(filePath) as ProductsCollection<Product>;
+                //    this.FilePath = filePath;
+                //    this.IsSaved = true;
+                //    this.IsBusy = false;
+                //});
             }
         }
 

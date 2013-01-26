@@ -148,7 +148,13 @@
                 <Image Source="..\Resources\icons\save.png"
                        Width="32" Height="32" />
             </Button>
-            
+            <Button Width="48" Height="48"
+                    Command="{Binding ShowOptionsCommand}"
+                    ToolTip="{x:Static loc:Lang.ToolbarBtnOptionsWindow}">
+                <Image Source="..\Resources\icons\options.png"
+                       Width="32" Height="32" />
+            </Button>
+
             <Separator />
             
             <Button Width="48" Height="48"
