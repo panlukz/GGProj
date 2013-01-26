@@ -33,17 +33,14 @@ namespace Proj
         {
 
             //TODO Do testow lokalizacji
-            string language = Settings.Default.Language.ToString();
-            if (String.IsNullOrEmpty(language))
+            if (Settings.Default.Language.LCID == 127)
             {
-                Settings.Default.Language = Thread.CurrentThread.CurrentUICulture;
-                Settings.Default.Save();
+                //TODO symulacja jezykow innych niz en i pl:
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
             }
             else
-                Proj.Loc.Lang.Culture = new System.Globalization.CultureInfo(language);
+                Proj.Loc.Lang.Culture = new System.Globalization.CultureInfo(Settings.Default.Language.ToString());
 
-            OptionsWindowView options = new OptionsWindowView();
-            options.Show();
         }
 
     }    

@@ -61,7 +61,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bardzo fajny program.
+        ///   Looks up a localized string similar to Very nice app.
         /// </summary>
         public static string AppName {
             get {
@@ -70,7 +70,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kup.
+        ///   Looks up a localized string similar to Buy.
         /// </summary>
         public static string GridBuy {
             get {
@@ -79,7 +79,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kategoria.
+        ///   Looks up a localized string similar to Category.
         /// </summary>
         public static string GridCategory {
             get {
@@ -88,7 +88,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Max. ilość.
+        ///   Looks up a localized string similar to Max. Qty.
         /// </summary>
         public static string GridMaxQty {
             get {
@@ -97,7 +97,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Min. ilość.
+        ///   Looks up a localized string similar to Min. Qty.
         /// </summary>
         public static string GridMinQty {
             get {
@@ -115,7 +115,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nazwa.
+        ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string GridProductName {
             get {
@@ -124,7 +124,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cena zakupu.
+        ///   Looks up a localized string similar to Purchase price.
         /// </summary>
         public static string GridPurchasePrice {
             get {
@@ -133,7 +133,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ilość.
+        ///   Looks up a localized string similar to Qty.
         /// </summary>
         public static string GridQty {
             get {
@@ -142,7 +142,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cena sprzedaży.
+        ///   Looks up a localized string similar to Sale price.
         /// </summary>
         public static string GridSalePrice {
             get {
@@ -151,7 +151,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Jednostka sprzedaży.
+        ///   Looks up a localized string similar to Sale unit.
         /// </summary>
         public static string GridSaleUnit {
             get {
@@ -160,7 +160,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Dodaj linię.
+        ///   Looks up a localized string similar to _Add line.
         /// </summary>
         public static string MenuAddLine {
             get {
@@ -169,7 +169,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Według _zaznaczenia &quot;Kup&quot;.
+        ///   Looks up a localized string similar to By &quot;_Buy&quot; selection.
         /// </summary>
         public static string MenuByBuySelection {
             get {
@@ -178,7 +178,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Według _kategorii rosnąco.
+        ///   Looks up a localized string similar to By _category ascending.
         /// </summary>
         public static string MenuByCategoryAsc {
             get {
@@ -187,7 +187,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Według kategorii malejąco.
+        ///   Looks up a localized string similar to By cat_egory descending.
         /// </summary>
         public static string MenuByCategoryDesc {
             get {
@@ -196,7 +196,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Według _nazwy rosnąco.
+        ///   Looks up a localized string similar to By _name ascending.
         /// </summary>
         public static string MenuByNameAsc {
             get {
@@ -205,7 +205,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Według nazwy malejąco.
+        ///   Looks up a localized string similar to By na_me descending.
         /// </summary>
         public static string MenuByNameDesc {
             get {
@@ -214,7 +214,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Według ceny _zakupu rosnąco.
+        ///   Looks up a localized string similar to By _purchase price ascending.
         /// </summary>
         public static string MenuByPurchasePriceAsc {
             get {
@@ -223,7 +223,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Według ceny zakupu malejąco.
+        ///   Looks up a localized string similar to By p_urchase price descending.
         /// </summary>
         public static string MenuByPurchasePriceDesc {
             get {
@@ -232,7 +232,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Według _ilości rosnąco.
+        ///   Looks up a localized string similar to By _quantity ascending.
         /// </summary>
         public static string MenuByQuantityAsc {
             get {
@@ -241,7 +241,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Według ilości malejąco.
+        ///   Looks up a localized string similar to By quan_tity descending.
         /// </summary>
         public static string MenuByQuantityDesc {
             get {
@@ -250,7 +250,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Według ceny _sprzedaży rosnąco.
+        ///   Looks up a localized string similar to By _sell price ascending.
         /// </summary>
         public static string MenuBySellPriceAsc {
             get {
@@ -259,7 +259,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Według ceny sprzedaży malejąco.
+        ///   Looks up a localized string similar to By se_ll price descending.
         /// </summary>
         public static string MenuBySellPriceDesc {
             get {
@@ -268,7 +268,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Generuj.
+        ///   Looks up a localized string similar to _Create.
         /// </summary>
         public static string MenuCreate {
             get {
@@ -277,7 +277,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generuj listę _sprzedaży....
+        ///   Looks up a localized string similar to _Create sales list....
         /// </summary>
         public static string MenuCreateSalesList {
             get {
@@ -286,7 +286,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generuj listę _zakupów....
+        ///   Looks up a localized string similar to Create _shopping list....
         /// </summary>
         public static string MenuCreateShoppingList {
             get {
@@ -295,7 +295,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Wyjście.
+        ///   Looks up a localized string similar to _Exit.
         /// </summary>
         public static string MenuExit {
             get {
@@ -304,7 +304,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Plik.
+        ///   Looks up a localized string similar to _File.
         /// </summary>
         public static string MenuFile {
             get {
@@ -313,7 +313,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Pomoc.
+        ///   Looks up a localized string similar to _Help.
         /// </summary>
         public static string MenuHelp {
             get {
@@ -322,7 +322,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Informacje.
+        ///   Looks up a localized string similar to _Information.
         /// </summary>
         public static string MenuInformation {
             get {
@@ -331,7 +331,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Lista.
+        ///   Looks up a localized string similar to _List.
         /// </summary>
         public static string MenuList {
             get {
@@ -340,7 +340,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Nowy plik....
+        ///   Looks up a localized string similar to _New file.
         /// </summary>
         public static string MenuNewFile {
             get {
@@ -349,7 +349,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Otwórz plik....
+        ///   Looks up a localized string similar to _Open file....
         /// </summary>
         public static string MenuOpenFile {
             get {
@@ -358,7 +358,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Odwrotnie do zaznaczenia &quot;Kup&quot;.
+        ///   Looks up a localized string similar to Opposite to &quot;Buy&quot; selecti_on.
         /// </summary>
         public static string MenuOppToBuySelection {
             get {
@@ -367,7 +367,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Usuń linię.
+        ///   Looks up a localized string similar to _Remove line.
         /// </summary>
         public static string MenuRemoveLine {
             get {
@@ -376,7 +376,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zapi_sz plik jako....
+        ///   Looks up a localized string similar to S_ave file as....
         /// </summary>
         public static string MenuSaveAsFile {
             get {
@@ -385,7 +385,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Zapisz plik.
+        ///   Looks up a localized string similar to _Save file.
         /// </summary>
         public static string MenuSaveFile {
             get {
@@ -394,7 +394,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Sortuj.
+        ///   Looks up a localized string similar to _Sort.
         /// </summary>
         public static string MenuSort {
             get {
@@ -403,7 +403,34 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ilość produktów do kupienia:.
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string OptionsBtnCancel {
+            get {
+                return ResourceManager.GetString("OptionsBtnCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string OptionsBtnSave {
+            get {
+                return ResourceManager.GetString("OptionsBtnSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language: (will change after restart).
+        /// </summary>
+        public static string OptionsTextLanguage {
+            get {
+                return ResourceManager.GetString("OptionsTextLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of products to buy:.
         /// </summary>
         public static string StatusbarBuyNumber {
             get {
@@ -412,7 +439,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Przychód ze sprzedaży:.
+        ///   Looks up a localized string similar to Income from sales:.
         /// </summary>
         public static string StatusbarIncome {
             get {
@@ -421,7 +448,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Koszt zakupu:.
+        ///   Looks up a localized string similar to The purchase cost:.
         /// </summary>
         public static string StatusbarPurchaseCost {
             get {
@@ -430,7 +457,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ilość wszystkich produktów:.
+        ///   Looks up a localized string similar to Total number of products:.
         /// </summary>
         public static string StatusbarTotalNumber {
             get {
@@ -439,7 +466,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dodaj linię.
+        ///   Looks up a localized string similar to Add line.
         /// </summary>
         public static string ToolbarBtnAddLine {
             get {
@@ -448,7 +475,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generuj listę sprzedaży.
+        ///   Looks up a localized string similar to Create sales list.
         /// </summary>
         public static string ToolbarBtnCreateSalesList {
             get {
@@ -457,7 +484,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Generuj listę zakupów.
+        ///   Looks up a localized string similar to Create shopping list.
         /// </summary>
         public static string ToolbarBtnCreateShoppingList {
             get {
@@ -466,7 +493,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Przesuń w dół.
+        ///   Looks up a localized string similar to Move down.
         /// </summary>
         public static string ToolbarBtnMoveDown {
             get {
@@ -475,7 +502,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Przesuń w górę.
+        ///   Looks up a localized string similar to Move up.
         /// </summary>
         public static string ToolbarBtnMoveUp {
             get {
@@ -484,7 +511,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nowy plik.
+        ///   Looks up a localized string similar to New file.
         /// </summary>
         public static string ToolbarBtnNewFile {
             get {
@@ -493,7 +520,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Otwórz plik.
+        ///   Looks up a localized string similar to Open file.
         /// </summary>
         public static string ToolbarBtnOpenFile {
             get {
@@ -502,7 +529,16 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Usuń linię.
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string ToolbarBtnOptionsWindow {
+            get {
+                return ResourceManager.GetString("ToolbarBtnOptionsWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove line.
         /// </summary>
         public static string ToolbarBtnRemoveLine {
             get {
@@ -511,7 +547,7 @@ namespace Proj.Loc {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zapisz plik.
+        ///   Looks up a localized string similar to Save file.
         /// </summary>
         public static string ToolbarBtnSaveFile {
             get {

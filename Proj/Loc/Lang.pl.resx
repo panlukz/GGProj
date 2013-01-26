@@ -118,156 +118,162 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="MenuSaveAsFile" xml:space="preserve">
-    <value>S_ave file as...</value>
+    <value>Zapi_sz plik jako...</value>
   </data>
   <data name="MenuByNameDesc" xml:space="preserve">
-    <value>By na_me descending</value>
+    <value>Według nazwy malejąco</value>
   </data>
   <data name="MenuByCategoryDesc" xml:space="preserve">
-    <value>By cat_egory descending</value>
+    <value>Według kategorii malejąco</value>
   </data>
   <data name="MenuByQuantityDesc" xml:space="preserve">
-    <value>By quan_tity descending</value>
+    <value>Według ilości malejąco</value>
   </data>
   <data name="MenuByPurchasePriceDesc" xml:space="preserve">
-    <value>By p_urchase price descending</value>
+    <value>Według ceny zakupu malejąco</value>
   </data>
   <data name="MenuBySellPriceDesc" xml:space="preserve">
-    <value>By se_ll price descending</value>
+    <value>Według ceny sprzedaży malejąco</value>
   </data>
   <data name="MenuByPurchasePriceAsc" xml:space="preserve">
-    <value>By _purchase price ascending</value>
+    <value>Według ceny _zakupu rosnąco</value>
   </data>
   <data name="MenuBySellPriceAsc" xml:space="preserve">
-    <value>By _sell price ascending</value>
+    <value>Według ceny _sprzedaży rosnąco</value>
   </data>
   <data name="MenuByBuySelection" xml:space="preserve">
-    <value>By "_Buy" selection</value>
+    <value>Według _zaznaczenia "Kup"</value>
   </data>
   <data name="MenuByNameAsc" xml:space="preserve">
-    <value>By _name ascending</value>
+    <value>Według _nazwy rosnąco</value>
   </data>
   <data name="MenuByCategoryAsc" xml:space="preserve">
-    <value>By _category ascending</value>
+    <value>Według _kategorii rosnąco</value>
   </data>
   <data name="MenuByQuantityAsc" xml:space="preserve">
-    <value>By _quantity ascending</value>
+    <value>Według _ilości rosnąco</value>
   </data>
   <data name="MenuOppToBuySelection" xml:space="preserve">
-    <value>Opposite to "Buy" selecti_on</value>
+    <value>Odwrotnie do zaznaczenia "Kup"</value>
   </data>
   <data name="MenuCreateShoppingList" xml:space="preserve">
-    <value>Create _shopping list...</value>
+    <value>Generuj listę _zakupów...</value>
   </data>
   <data name="MenuCreateSalesList" xml:space="preserve">
-    <value>_Create sales list...</value>
+    <value>Generuj listę _sprzedaży...</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>Very nice app</value>
+    <value>Bardzo fajny program</value>
   </data>
   <data name="MenuSaveFile" xml:space="preserve">
-    <value>_Save file</value>
+    <value>_Zapisz plik</value>
   </data>
   <data name="MenuExit" xml:space="preserve">
-    <value>_Exit</value>
+    <value>_Wyjście</value>
   </data>
   <data name="MenuRemoveLine" xml:space="preserve">
-    <value>_Remove line</value>
+    <value>_Usuń linię</value>
   </data>
   <data name="MenuSort" xml:space="preserve">
-    <value>_Sort</value>
+    <value>_Sortuj</value>
   </data>
   <data name="MenuHelp" xml:space="preserve">
-    <value>_Help</value>
+    <value>_Pomoc</value>
   </data>
   <data name="MenuFile" xml:space="preserve">
-    <value>_File</value>
+    <value>_Plik</value>
   </data>
   <data name="MenuOpenFile" xml:space="preserve">
-    <value>_Open file...</value>
+    <value>_Otwórz plik...</value>
   </data>
   <data name="MenuNewFile" xml:space="preserve">
-    <value>_New file</value>
+    <value>_Nowy plik...</value>
   </data>
   <data name="MenuList" xml:space="preserve">
-    <value>_List</value>
+    <value>_Lista</value>
   </data>
   <data name="MenuInformation" xml:space="preserve">
-    <value>_Information</value>
+    <value>_Informacje</value>
   </data>
   <data name="MenuCreate" xml:space="preserve">
-    <value>_Create</value>
+    <value>_Generuj</value>
   </data>
   <data name="MenuAddLine" xml:space="preserve">
-    <value>_Add line</value>
+    <value>_Dodaj linię</value>
   </data>
   <data name="ToolbarBtnNewFile" xml:space="preserve">
-    <value>New file</value>
+    <value>Nowy plik</value>
   </data>
   <data name="ToolbarBtnOpenFile" xml:space="preserve">
-    <value>Open file</value>
+    <value>Otwórz plik</value>
   </data>
   <data name="ToolbarBtnSaveFile" xml:space="preserve">
-    <value>Save file</value>
+    <value>Zapisz plik</value>
   </data>
   <data name="ToolbarBtnAddLine" xml:space="preserve">
-    <value>Add line</value>
+    <value>Dodaj linię</value>
   </data>
   <data name="ToolbarBtnRemoveLine" xml:space="preserve">
-    <value>Remove line</value>
+    <value>Usuń linię</value>
   </data>
   <data name="ToolbarBtnMoveUp" xml:space="preserve">
-    <value>Move up</value>
+    <value>Przesuń w górę</value>
   </data>
   <data name="ToolbarBtnMoveDown" xml:space="preserve">
-    <value>Move down</value>
+    <value>Przesuń w dół</value>
   </data>
   <data name="ToolbarBtnCreateShoppingList" xml:space="preserve">
-    <value>Create shopping list</value>
+    <value>Generuj listę zakupów</value>
   </data>
   <data name="ToolbarBtnCreateSalesList" xml:space="preserve">
-    <value>Create sales list</value>
+    <value>Generuj listę sprzedaży</value>
   </data>
   <data name="GridProductId" xml:space="preserve">
     <value>ID</value>
   </data>
   <data name="GridProductName" xml:space="preserve">
-    <value>Name</value>
+    <value>Nazwa</value>
   </data>
   <data name="GridPurchasePrice" xml:space="preserve">
-    <value>Purchase price</value>
+    <value>Cena zakupu</value>
   </data>
   <data name="GridSalePrice" xml:space="preserve">
-    <value>Sale price</value>
+    <value>Cena sprzedaży</value>
   </data>
   <data name="GridSaleUnit" xml:space="preserve">
-    <value>Sale unit</value>
+    <value>Jednostka sprzedaży</value>
   </data>
   <data name="GridMinQty" xml:space="preserve">
-    <value>Min. Qty</value>
+    <value>Min. ilość</value>
   </data>
   <data name="GridMaxQty" xml:space="preserve">
-    <value>Max. Qty</value>
+    <value>Max. ilość</value>
   </data>
   <data name="GridCategory" xml:space="preserve">
-    <value>Category</value>
+    <value>Kategoria</value>
   </data>
   <data name="GridBuy" xml:space="preserve">
-    <value>Buy</value>
+    <value>Kup</value>
   </data>
   <data name="StatusbarTotalNumber" xml:space="preserve">
-    <value>Total number of products:</value>
+    <value>Ilość wszystkich produktów:</value>
   </data>
   <data name="StatusbarBuyNumber" xml:space="preserve">
-    <value>Number of products to buy:</value>
+    <value>Ilość produktów do kupienia:</value>
   </data>
   <data name="StatusbarPurchaseCost" xml:space="preserve">
-    <value>The purchase cost:</value>
+    <value>Koszt zakupu:</value>
   </data>
   <data name="StatusbarIncome" xml:space="preserve">
-    <value>Income from sales:</value>
+    <value>Przychód ze sprzedaży:</value>
   </data>
   <data name="GridQty" xml:space="preserve">
-    <value>Qty</value>
+    <value>Ilość</value>
+  </data>
+  <data name="OptionsBtnSave" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="OptionsTextLanguage" xml:space="preserve">
+    <value>Język: (zmiana nastąpi po restarcie aplikacji)</value>
   </data>
 </root>
