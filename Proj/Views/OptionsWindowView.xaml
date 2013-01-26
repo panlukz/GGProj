@@ -2,11 +2,12 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:conv="clr-namespace:Proj.Converters"
-        Title="OptionsWindowView" Height="300" Width="300">
+        xmlns:loc="clr-namespace:Proj.Loc"
+        Title="OptionsWindowView" Height="300" Width="300"
+        >
     <Window.Resources>
         <conv:ShortToFullNamesCultureInfoItemsSourceConverter x:Key="shortToFullConv"/>
-        <conv:ShortToFullNameCultureInfoSelectedItemConverter x:Key="shortToFullSelItemConv"/>
-        
+        <conv:ShortToFullNameCultureInfoSelectedItemConverter x:Key="shortToFullSelItemConv"/>   
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,17 +15,32 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="0">Jezyk (TO RESX)</TextBlock>
-        <ComboBox Grid.Row="0"
-            Grid.Column="1"
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static loc:Lang.OptionsTextLanguage}" 
+                   Margin="5,10" TextWrapping="Wrap" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="0" Grid.Column="1"
             ItemsSource="{Binding LanguageList, Converter={StaticResource shortToFullConv}}"
             SelectedItem="{Binding Language, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource shortToFullSelItemConv}}"
-            >
-        </ComboBox>
-        <Button Grid.Row="2" Grid.ColumnSpan="2" Command="{Binding SaveOptionsCommand}">Save (TO RESX)</Button>
+            Margin="5,10" Padding="5,5" 
+            MinWidth="120"
+            VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+        <Button Content="{x:Static loc:Lang.OptionsBtnSave}"
+                Command="{Binding SaveOptionsCommand}"
+                Style="{StaticResource dialogButtonStyle}"
+                IsDefault="True"
+                Click="closeWindow"
+                />
+        <Button Content="{x:Static loc:Lang.OptionsBtnCancel}"
+                Style="{StaticResource dialogButtonStyle}"
+                IsCancel="True"
+                Click="closeWindow"
+                />
+        </StackPanel>
     </Grid>
 </Window>

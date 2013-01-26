@@ -26,5 +26,11 @@ namespace Proj.Views
             this.DataContext = new OptionsWindowViewModel();
             InitializeComponent();
         }
+
+        //TODO jedyny code-behind do zamykania okienka:)
+        private void closeWindow(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
