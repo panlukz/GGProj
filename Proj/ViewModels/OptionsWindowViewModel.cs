@@ -16,7 +16,7 @@ namespace Proj.ViewModels
 {
     class OptionsWindowViewModel : ViewModelBase
     {
-
+        //TODO przerob to cale wykorzystanie converterow na wykorzystanie DataTemplatów
         private List<CultureInfo> languagesList = null;
         public List<CultureInfo> LanguageList
         {
