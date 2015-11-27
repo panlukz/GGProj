@@ -1,6 +1,8 @@
-# README #
+GGProj
+======
 
 -- pl
+-----
 
 GGPROJ jest symulatorem zakupu i sprzedaży towarów, w tym konkretnym przypadku przygotowany pod sprzedaż owoców i warzyw. Symuluje wpisy w książce przychodów i rozchodów która musi być prowadzona przez małych sprzedawców nie korzystających z kas fiskalnych. 
 
@@ -10,6 +12,7 @@ W pliku lista.xml znajduje się przykładowa baza z towarami na których można 
 
 
 -- eng
+------
 
 GGProj is simulator of sale and purchase of goods, in this case prepared for vegetables and fruits sale. It generate entries in receipts and expenses book, which small entrepreneurs have to keep if they don't use cash register.
 
