@@ -19,3 +19,7 @@ GGProj is simulator of sale and purchase of goods, in this case prepared for veg
 Purchase entries are generated when 'Buy?' checkbox is selected. However, sale entries are simulating purchases, so they are generated randomly, until stocks of goods are out.
 
 In the included file 'lista.xml' you can find xml-database with example list of goods. Feel free to import and use it with simulation in the program.
+
+
+Wykorzystane technologie / used technologies:
+* .net, C#, WPF (IDataErrorInfo, Converters, Localization), MVVM (Binding, INotifyPropertyChanged, RelayCommands), XML 
