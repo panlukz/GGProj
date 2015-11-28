@@ -23,3 +23,5 @@ In the included file 'lista.xml' you can find xml-database with example list of 
 
 Wykorzystane technologie / used technologies:
 * .net, C#, WPF (IDataErrorInfo, Converters, Localization), MVVM (Binding, INotifyPropertyChanged, RelayCommands), XML 
+
+Video: https://www.youtube.com/watch?v=63H98J1AAWc
